@@ -1,16 +1,20 @@
 #include <stdio.h>
 
-void print_source(const char *s)
+/*
+	Comment outside
+*/
+
+void	print(const char *s)
 {
 	printf(s, s, 10, 9, 34);
 }
 
-int main(void)
+int		main(void)
 {
 /*
-	Comment.
+	Comment in
 */
-	const char *s = "/*%2$c%3$cThis program will print its own source when run.%2$c*/%2$c%2$c#include <stdio.h>%2$c%2$cvoid print_source(const char *s)%2$c{%2$c%3$cprintf(s, s, 10, 9, 34);%2$c}%2$c%2$cint main(void)%2$c{%2$c/*%2$c%3$cComment.%2$c*/%2$c%3$cconst char *s = %4$c%1$s%4$c;%2$c%3$cprint_source(s);%2$c%3$creturn (0);%2$c}%2$c";
-	print_source(s);
+	const char *s = "#include <stdio.h>%2$c%2$c/*%2$c%3$cComment outside%2$c*/%2$c%2$cvoid%3$cprint(const char *s)%2$c{%2$c%3$cprintf(s, s, 10, 9, 34);%2$c}%2$c%2$cint%3$c%3$cmain(void)%2$c{%2$c/*%2$c%3$cComment in%2$c*/%2$c%3$cconst char *s = %4$c%s%4$c;%2$c%3$cprint(s);%2$c%3$creturn (0);%2$c}%2$c";
+	print(s);
 	return (0);
 }
